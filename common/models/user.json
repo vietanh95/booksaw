@@ -1,0 +1,53 @@
+{
+  "name": "Useradmin",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "idInjection": false,
+    "mysql": {
+      "schema": "booksaw",
+      "table": "User"
+    }
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "autoIncrement": true,
+      "primaryKey": true,
+      "allowNull": false,
+      "unique": true
+    },
+    "email": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "realm": {
+      "type": "string"
+    },
+    "password": {
+      "type": "string"
+    },
+    "emailVerified": {
+      "type": "string"
+    },
+    "verificationToken": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "model": "*",
+      "property": "*",
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
